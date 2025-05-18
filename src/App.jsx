@@ -1,5 +1,5 @@
 import './App.css'
-import { Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter,Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
@@ -22,7 +22,7 @@ function App() {
         <div className="bg-slate-900 fixed w-full z-10">
           <Navbar />
         </div>)}
-
+    <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/allProducts' element={<AllProducts />} />
@@ -32,6 +32,7 @@ function App() {
         <Route path='/jewelery' element={<Jewelery />} />
         <Route path='/cart' element={<Cart />}/>
       </Routes>
+      </BrowserRouter>
     </>
   )
 }
